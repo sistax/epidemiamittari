@@ -13,7 +13,10 @@ Simple overview of use/purpose.
 
 1. Data haettiin THL:n avoimesta datasta ja muokattiin PowerBI:tä R:llä.
 >> IDE-työkaluna käytettiin RStudiota.
->> Datan perusmuokkaus tehtiin R:llä, PowerBI:ssä voitiin siirtyä suoraan visualisoinnin toteutukseen.
+>> Datan perusmuokkaus tehtiin R:llä, Power BI:ssä voitiin siirtyä suoraan visualisoinnin toteutukseen.
 
 2. Data tuotiin PowerBI:n käyttöön R-komentosarjana. 
 >> Käytettävä data on [main.R -skriptin](main.R) tuottama **thldata**-elementti.
+
+3. Visualisoinnit toteutettiin Power BI:llä
+>> Datan sarakkeiden tietotyyppi muutettiin kokonaisluvuiksi (pl. Aika-sarake), jota varten tekstisolut muunnettiin puuttuviksi arvoiksi.

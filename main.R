@@ -1,11 +1,10 @@
-#Tässä haetaan data ja muokataan se PowerBI:n käyttöön.
+#Tässä haetaan data ja muokataan se Power BI:n käyttöön.
 #Pyritään pärjäämään suht pienellä määrällä paketteja (base R:llä).
 
 #pakettilataukset
 library(tidyr)
 library(dplyr)
 library(stringr)
-library(lubridate)
 
 #Haetaan THL:n tartuntatautirekisteristä koronatapausten, testausten ja kuolemantapausten viikkotasoinen data.
 thl_api <- "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?row=dateweek20200101-509030&column=measure-444833.445356.492118.&&fo=1"
