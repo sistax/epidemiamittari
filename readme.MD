@@ -16,4 +16,4 @@ Simple overview of use/purpose.
 > Kaikki datan muokkaus tehtiin R:llä, PowerBI:ssä voitiin siirtyä suoraan visualisoinnin toteutukseen.
 
 2. Data tuotiin PowerBI:n käyttöön R-komentosarjana. 
-> Käytettävä data on main.R -skriptin tuottama **thldata**-elementti.
+> Käytettävä data on [main.R -skriptin](main.R) tuottama **thldata**-elementti.
