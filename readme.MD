@@ -12,8 +12,8 @@ Simple overview of use/purpose.
 # Raportin toteutus
 
 1. Data haettiin THL:n avoimesta datasta ja muokattiin PowerBI:tä R:llä.
-&nbsp; IDE-työkaluna käytettiin RStudiota.
-&nbsp; Kaikki datan muokkaus tehtiin R:llä, PowerBI:ssä voitiin siirtyä suoraan visualisoinnin toteutukseen.
+** IDE-työkaluna käytettiin RStudiota.
+** Kaikki datan muokkaus tehtiin R:llä, PowerBI:ssä voitiin siirtyä suoraan visualisoinnin toteutukseen.
 
 2. Data tuotiin PowerBI:n käyttöön R-komentosarjana. 
-&nbsp; Käytettävä data on main.R -skriptin tuottama **thldata**-elementti.
+** Käytettävä data on main.R -skriptin tuottama **thldata**-elementti.
