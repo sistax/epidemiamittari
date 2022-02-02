@@ -27,9 +27,7 @@ thldata <- csv_raw |> #Natiivi pipe-operaattori, vrt. tidyverse-paketin %>%
   #Korvataan puuttuvat arvot nollilla
   tidyr::replace_na(list(Testaukset = 0, Kuolemat = 0)) |>
   
-  #Jaetaan Aika-sarake viikkosarakkeeseen ja vuosisarakkeeseen
-  dplyr::mutate(Viikko = str_sub(Aika,-2,-1),
-                Vuosi = str_sub(Aika,7, 10)) 
-  
-  
-  
+  #Jaetaan Aika-sarake viikkosarakkeeseen ja vuosisarakkeeseen sekä varmuuden vuoksi vuosiviikko sarakkeeseen.
+  dplyr::mutate(Viikko = stringr::str_sub(Aika,-2,-1),
+                Vuosi = stringr::str_sub(Aika,7, 10),
+                Vuosiviikko = paste(Vuosi, Viikko, sep = ""))
