@@ -4,7 +4,8 @@
 #pakettilataukset
 library(tidyr)
 library(dplyr)
-library(stringr)                         
+library(stringr)
+library(lubridate)
 
 #Haetaan THL:n tartuntatautirekisteristä koronatapausten, testausten ja kuolemantapausten viikkotasoinen data.
 thl_api <- "https://sampo.thl.fi/pivot/prod/fi/epirapo/covid19case/fact_epirapo_covid19case.csv?row=dateweek20200101-509030&column=measure-444833.445356.492118.&&fo=1"
@@ -28,6 +29,6 @@ thldata <- csv_raw |> #Natiivi pipe-operaattori, vrt. tidyverse-paketin %>%
   tidyr::replace_na(list(Testaukset = 0, Kuolemat = 0)) |>
   
   #Jaetaan Aika-sarake viikkosarakkeeseen ja vuosisarakkeeseen sekä varmuuden vuoksi vuosiviikko sarakkeeseen.
-  dplyr::mutate(Viikko = stringr::str_sub(Aika,-2,-1),
-                Vuosi = stringr::str_sub(Aika,7, 10),
-                Vuosiviikko = paste(Vuosi, Viikko, sep = ""))
+  dplyr::mutate( Vuosiviikko = paste(stringr::str_sub(Aika,7, 10), stringr::str_sub(Aika,-2,-1), sep = ""),
+                 Viikko = stringr::str_sub(Aika,-2,-1),
+                 Vuosi = stringr::str_sub(Aika,7, 10)) 
