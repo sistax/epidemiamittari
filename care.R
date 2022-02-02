@@ -1,4 +1,4 @@
-#Tässä haetaan sairaalahoitodataa, muokataan sitä Power BI:n käyttöön ja piirretään kartta.
+#Tässä haetaan sairaalahoitodataa, muokataan sitä Power BI:n käyttöön ja piirretään karttoja.
 
 #pakettilataukset
 library(tidyr)
@@ -31,7 +31,10 @@ care_data <- csv_care |>
                 Tehohoitojaksot = 'Käynnissä olevat tehohoitojaksot') |>
   
   #Lasketaan mittaluku: Perusterveydenhuollossa olevat 100 000 asukasta kohden
-  mutate(Perusterveys_suhde = Perusterveydenhuolto / (Asukaslukumäärä / 100000))
+  mutate(Perusterveys_suhde = Perusterveydenhuolto / (Asukaslukumäärä / 100000),
+         Erikoissairaanhoito_suhde = Erikossairaanhoito / (Asukaslukumäärä / 100000),
+         Tehohoitojaksot_suhde = Tehohoitojaksot / (Asukaslukumäärä / 100000)
+         )
 
 #Haetaan geofi-paketilla kunnat ja niille erityisvastuualueet.
 
@@ -46,7 +49,7 @@ kartta_data <- left_join(erityisvastuualueet, care_data, by = c("erva_name_fi" =
   filter(erva_name_fi != "Ahvenanmaa")
 
 #Piirretään kartta.
-ggplot(kartta_data,
+care_kartta <- ggplot(kartta_data,
         aes(fill = Perusterveys_suhde, label = paste0(round(Perusterveys_suhde,2)))) +
         geom_sf(color = alpha("white", 1/3)) +
         theme_minimal() +
@@ -55,3 +58,5 @@ ggplot(kartta_data,
               axis.title = element_blank(),
               panel.grid = element_blank()) +
         labs(fill = "")
+
+ggsave("care_kartta.png")
