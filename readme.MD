@@ -11,7 +11,7 @@
 
 ## Raportin toteutus
 
-1. Data haettiin [THL:n](https://thl.fi/fi/) ja [Our Wolrd in Datan](https://ourworldindata.org/) avoimesta datasta
+1. Data haettiin <a href="https://thl.fi/fi/" target="_blank">THL:n</a> ja  <a href="https://ourworldindata.org/" target="_blank">Our Wolrd in Datan</a> avoimesta datasta.
 
 2. Data tuotiin Power BI:n käyttöön R-komentosarjana tai suoraan avoimen datan verkko-osoitteesta.
 >> R:n data on oltava data frame -muodossa, jollainen on esimerkiksi [main.R -skriptin](main.R) tuottama **thldata**-elementti.
