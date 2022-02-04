@@ -1,3 +1,5 @@
+#Haetaan avoin data koronarokotuksista.
+
 #pakettilataukset
 library(tidyr)
 library(dplyr)
