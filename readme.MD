@@ -25,4 +25,4 @@
 >> ***Koronarokotteen saaneet*** ja ***Täyden rokotussarjan saaneet*** -tietoja varten puuttuvien solujen tiedot korvattiin edeltävän solun tiedolla, koska THL:n datassa kumulatiivinen päiväkohtainen rokotusten saaneiden määrä ja rokotuksen saaneiden määrä yhteensä ei jostain syystä tuoneet samaa tietoa (asiaa tutkittu [care.R-skriptissä](care.R)).
 
 5. Visualisoinnit toteutettiin ja raportti julkaistiin Power BI:llä
->> Power BI:hin yritettiin tuoda myös R:n karttavisualisointi (ks. [care.R](care.R) ja [karttakuva](care_kartta.png)), mutta visualisointia ei saatu kunnolla toimimaan.
+>> Power BI:hin yritettiin tuoda myös R:n karttavisualisointi (ks. [care.R](care.R) ja [karttakuva](https://raw.githubusercontent.com/sistax/epidemiamittari/main/care_kartta.png)), mutta visualisointia ei saatu kunnolla toimimaan.
